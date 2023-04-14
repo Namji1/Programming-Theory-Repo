@@ -12,6 +12,8 @@ public class WolfTarget : Targets
         GetGameManager();
         addedscore = 20;
     }
+
+    // POLYMORPHISM
     protected override void SetSpeed()
     {
         defaultSpeed = 4.5f;

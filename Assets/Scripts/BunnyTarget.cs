@@ -12,6 +12,8 @@ public class BunnyTarget : Targets
         GetGameManager();
         addedscore = 65;
     }
+
+    // POLYMORPHISM
     protected override void SetSpeed()
     {
         defaultSpeed = 3.5f;

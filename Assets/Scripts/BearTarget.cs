@@ -12,6 +12,8 @@ public class BearTarget : Targets
         GetGameManager();
         addedscore = 30;
     }
+
+    // POLYMORPHISM
     protected override void SetSpeed()
     {
         defaultSpeed = 4.0f;

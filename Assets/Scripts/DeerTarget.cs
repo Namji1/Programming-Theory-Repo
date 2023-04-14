@@ -12,6 +12,8 @@ public class DeerTarget : Targets
         GetGameManager();
         addedscore = 45;
     }
+
+    // POLYMORPHISM
     protected override void SetSpeed()
     {
         defaultSpeed = 5.0f;
