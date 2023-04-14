@@ -8,10 +8,13 @@ public class DeerTarget : Targets
     // Start is called before the first frame update
     void Start()
     {
-        defaultSpeed = 5.0f;
-        speed = defaultSpeed;
+        SetSpeed();
         GetGameManager();
         addedscore = 45;
     }
-
+    protected override void SetSpeed()
+    {
+        defaultSpeed = 5.0f;
+        base.SetSpeed();
+    }
 }

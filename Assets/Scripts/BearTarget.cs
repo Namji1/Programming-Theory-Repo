@@ -8,10 +8,13 @@ public class BearTarget : Targets
     // Start is called before the first frame update
     void Start()
     {
-        defaultSpeed = 4.0f;
-        speed = defaultSpeed;
+        SetSpeed();
         GetGameManager();
         addedscore = 30;
     }
-
+    protected override void SetSpeed()
+    {
+        defaultSpeed = 4.0f;
+        base.SetSpeed();
+    }
 }

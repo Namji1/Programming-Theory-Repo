@@ -10,11 +10,12 @@ public class Targets : MonoBehaviour
 
     private GameManager gameManagerScript;
 
-    public AudioClip hitAudioClip;
+    public SoundManager soundManagerScript;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetSpeed();
     }
 
     // Update is called once per frame
@@ -44,16 +45,20 @@ public class Targets : MonoBehaviour
     }
     protected private void OnMouseDown()
     {
-        MeshRenderer rend = GetComponent<MeshRenderer>();
-        if (rend.enabled == true && gameManagerScript.gameOver==false)
+        if (gameManagerScript.gameOver==false)
         {
-            gameObject.GetComponent<AudioSource>().PlayOneShot(hitAudioClip);
+            soundManagerScript = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
+            soundManagerScript.PlayHitAudio();
             gameManagerScript.score += addedscore;
-            rend.enabled = false;
+            Destroy(gameObject);
         }
         else
         {
             addedscore = 0;
         }
+    }
+    protected virtual void SetSpeed()
+    {
+        speed = defaultSpeed;
     }
 }

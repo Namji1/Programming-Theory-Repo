@@ -8,9 +8,13 @@ public class BunnyTarget : Targets
     // Start is called before the first frame update
     void Start()
     {
-        defaultSpeed = 3.5f;
-        speed = defaultSpeed;
+        SetSpeed();
         GetGameManager();
         addedscore = 65;
+    }
+    protected override void SetSpeed()
+    {
+        defaultSpeed = 3.5f;
+        base.SetSpeed();
     }
 }

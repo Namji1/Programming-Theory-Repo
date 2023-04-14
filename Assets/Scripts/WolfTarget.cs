@@ -8,9 +8,13 @@ public class WolfTarget : Targets
     // Start is called before the first frame update
     void Start()
     {
-        defaultSpeed = 4.5f;
-        speed = defaultSpeed;
+        SetSpeed();
         GetGameManager();
         addedscore = 20;
+    }
+    protected override void SetSpeed()
+    {
+        defaultSpeed = 4.5f;
+        base.SetSpeed();
     }
 }
